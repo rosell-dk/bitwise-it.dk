@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://www.bitwise-it.dk/contact/</loc>
+    <lastmod>2017-05-07T21:04:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.bitwise-it.dk/</loc>
+    <lastmod>2017-05-04T21:04:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.bitwise-it.dk/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bitwise-it.dk/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.bitwise-it.dk/</loc>
+    <lastmod>2017-05-07T21:04:32+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

@@ -1,0 +1,35 @@
+# DefaultContentLanguage = "en"
+baseURL = "http://www.bitwise-it.dk/"
+enableEmoji = false
+theme = "bitwise"
+title = "bitwise"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[blackfriday]
+  hrefTargetBlank = true
+  extensions = ["noEmptyLineBeforeBlock"]
+  fractions = true
+  # List of extensions:
+  # https://godoc.org/gopkg.in/rtfb/blackfriday.v2#Extensions 
+  # beware to camelCase them...
+
+[Params]
+  Author = "Bjørn Rosell"
+
+#[[menu.main]]
+#    name = "Home"
+#    weight = -110
+#    url = "/"
+
+[languages]
+[languages.en]
+languageCode = "en-us"
+title = "bitwise (en)"
+
+[languages.dk]
+title = "bitwise (dk)"
+
+

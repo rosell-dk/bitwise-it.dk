@@ -1,0 +1,490 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:title" content="bitwise">
+<meta property="og:image" content="http://picoquery.com/img/logo.png">
+<meta property="og:url" content="http://bitwise-it.dk/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="bitwise">
+<style>
+
+html, body, #wrap3 {
+  min-height: 90vh;
+}
+body {
+  margin: 0px auto;
+  font-size: 1.1em;
+  position: relative;
+  line-height: 1.3;
+  font-family: 'Open Sans', sans-serif;
+  background-color: brown;
+  padding: 0px 20px 22px;
+}
+#wrap3 {
+  margin: 0px auto;
+  max-width: 1300px;
+  background-image: url(/images/bg.png);
+  background-size: 300px;
+  box-sizing: border-box;
+  padding: 10px 0 80px;
+ 
+}
+@keyframes bg {
+    from {background-position: 0 0px;}
+    to {background-position: 0px -240px;}
+}
+
+
+#wrap2 {
+  margin: 0 auto;
+  max-width: 1000px;
+  border: 1px solid transparent;
+  position: relative;
+}
+#table {
+  position: relative;
+  background-color: white;
+  display: table;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+
+}
+#table > * {
+  display: table-cell;
+}
+pre {
+  padding: 16px;
+  overflow: auto;
+  line-height: 2.45;
+  word-wrap: normal;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  word-wrap: normal;
+  margin-top: 0;
+  font: 12px monospace;
+  color: #333;
+  line-height:20px;
+}
+
+h1, h2, h3 {
+  font-family: monospace;
+  text-transform: uppercase;
+  margin: 27px 0 10px;
+  font-weight: normal;
+  color: #2f7ea0;
+}
+h1 {
+  font-size: 24px;
+ 
+  letter-spacing: 7px;
+  margin: 27px 0;
+ 
+  text-align: center;
+  border-bottom: 1px solid #2f7ea0;
+}
+h2 {
+  font-size: 21px;
+  letter-spacing: 1px;
+}
+h3 {
+  font-size: 18px;
+}
+p {
+  margin: 10px 0;
+}
+
+article a {
+  color: #2f7ea0; 
+  text-decoration: none;
+}
+
+sidebar {
+  width: 202px;
+}
+main {
+  padding: 0 20px 0 40px;
+}
+article {
+  position: relative;
+}
+
+#logo {
+  position: absolute;
+  top: 2px;
+  left: 20px;
+}
+
+#logo > img {
+  width: 166px;
+}
+
+#logo > img:hover {
+  animation: slant 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes slant {
+  from {transform: rotate(0)}
+  to {transform: rotate(4deg)}
+}
+article a:hover {
+  display: inline-block;
+ 
+}
+@keyframes logo {
+  from {background-position: 0 0px;}
+  to {background-position: 0px -240px;}
+}
+
+
+ 
+ 
+#drop {
+  display: none;
+}
+nav {
+  font-size: 16px;
+  margin-top: 17px;
+  margin-right: 4px;
+  display: inline-block;
+  float: right;
+}
+nav ul {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+  margin: 0;
+}
+nav li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  border: 1px solid white;
+  background-color: #2f7ea0;
+}
+
+nav > ul > li {
+}
+nav li li {
+  border-top: 1px solid #ccc;
+}
+nav li ul {
+  position: absolute;
+  display: none;
+  z-index: 200;
+}
+nav li:hover ul {
+  display: block;
+}
+nav li li {
+  padding-left: 0;
+  background-color: #e0e0e0;
+  font-size: 15px;
+  display: block;
+}
+nav li a {
+  margin-left: 0;
+}
+nav li > a {
+  padding: 3px 20px;
+}
+nav li li > a {
+  border-width: 0;
+}
+nav a:hover {
+  background-color: brown;
+  color: white;
+}
+
+#menu {
+  height: 50px;
+}
+#menu_btn {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  body {
+    padding: 5px 0 0;
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    padding: 0;
+  }
+
+
+   
+
+  #menu_btn {
+    display: block;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 4px;
+    right: 9px;
+  }
+  #menu_btn svg {
+    cursor: pointer;
+    display: block;
+    padding: 7px;
+  }
+  #menu_btn:hover {
+    border: 1px solid #017498;
+    padding: 2px 3px;
+    margin: -3px -4px;
+    border-radius: 9px;
+    background-color: rgba(1,104,128,0.8);
+ 
+  }
+  nav {
+    display: none;
+  }
+ 
+
+  #drop:checked + nav {
+    display: block;
+  }
+  nav {
+    background-image: url(/images/bg.png);
+
+ 
+    position: absolute;
+    right: 12px;
+    z-index: 200;
+    top: 27px;
+  }
+  nav {
+    animation:animatefadein 0.2s;
+  }
+  @keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+  @keyframes animateright{from{right:-300px;opacity:0} to{right:14px;opacity:1}}
+  @keyframes animatefadein{
+    from{opacity:0} 
+    to{opacity:100%}
+  }
+  @keyframes animatezoom{
+    from{transform:scale(0)} 
+    to{transform:scale(1)}
+  }
+  @keyframes animatezoomout{
+    from{
+      transform:scale(1);
+    } 
+    to{
+      transform:scale(0);
+    }
+  }
+
+  nav li ul {
+    display: block;
+    position: static;
+  }
+
+  nav {
+    font-size: 16px;
+    border: 1px solid white;
+  }
+  nav ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav li {
+    display: block;
+    margin: 0;
+  }
+  nav li a {
+    border: none;
+  }
+
+  nav li {
+    border-top: 1px solid #ccc;
+  }
+  nav li li {
+    padding-left: 0;
+    background-color: #e0e0e0;
+  }
+  nav li a {
+    margin-left: 0;
+  }
+  nav li > a {
+    padding: 6px 15px;
+  }
+  nav li li > a {
+    padding: 4px 20px 4px 30px;
+  }
+  nav li li li > a {
+    padding-left: 50px;
+  }
+  nav a:hover {
+    background-color: #c55a5a;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+  #table {
+    display: block;
+  }
+  #table > * {
+    display: block;
+  }
+  body {
+    padding-top: 0;
+  }
+   
+}
+
+</style>
+  <title>bitwise is a tiny IT company based in Copenhagen</title>
+</head>
+
+<body>
+  <div id="wrap3">
+    <div id="wrap2">
+      <a href="/" id="logo"><img src="/images/logo-white.svg" alt=""></a>
+
+      <div id="menu">
+        <div id="menu_btn">
+          <label for="drop">
+            <svg width="26" height="20" viewBox="0 0 13 10">
+              <path d="M0,1 13,1" stroke="#fff" stroke-width="2"/>
+              <path d="M0,5 13,5" stroke="#fff" stroke-width="2"/>
+              <path d="M0,9 13,9" stroke="#fff" stroke-width="2"/>
+            </svg>
+          </label>
+        </div>
+        <input type="checkbox" id="drop" />
+        <nav>
+          <ul>
+            
+            
+                
+              <li>
+              <a href="/contact/">Contact</a>
+            
+            </li>
+            
+          </ul>
+
+        </nav>
+      </div>
+      <div id="table">
+        <main>
+          <article>
+        
+
+<div style="display:inline-block; width:70%; margin:40px 0 50px 15%; font-size:25px; border:1px solid #2f7ea0; background-color:#2f7ea0; color: white; font-family:serif; padding:20px;">bitwise is a tiny IT company based in Copenhagen. We create websites and web applications</div>
+
+<h1 id="expertice">Expertice</h1>
+
+<!--
+Wordpress, Drupal, Responsive design, Performance, Static site generators, CDN, VPS, SQL, MySQL, mariadb, server maintenance, control panels, AJAX, markdown, HTML, CSS, Javascript, jQuery, PHP, YAML, XML, crossbrowser, JSON, CSS animation, SVG
+-->
+
+<h2 id="wordpress-and-drupal">Wordpress and Drupal</h2>
+
+<ul>
+<li>Installation</li>
+<li>Creation of templates/themes from either HTML or a graphical layout</li>
+<li>Setting up various plugins needed for the solution</li>
+<li>Custom plugin development</li>
+<li>Migration</li>
+<li>Insight into the inner workings of Wordpress and Drupal</li>
+</ul>
+
+<h2 id="custom-web-applications">Custom web applications</h2>
+
+<ul>
+<li>Custom web applications from scratch, ie on a LAMP stack</li>
+<li>To rapidly create an application, we sometimes use <a href="https://cakephp.org/" target="_blank">CakePHP</a></li>
+</ul>
+
+<h2 id="static-websites">Static websites</h2>
+
+<p>Static websites are trending, and for good reasons. Performance is as great as it comes. Security too. There is virtually no maintenance (no CMS updates to install, no CMS migration to next major version, no server updates, no database problems, etc.). Your content becomes more distributable and reusable. And last, not least: Static site generators are maturing and fun to work with.</p>
+
+<!--
+- Performance is as great as it comes\
+ - The whole site can be put on a CDN
+- Security is as great as it comes\
+ - No more worrying whether your CMS has security issues not yet discovered (it probably has)
+- No maintenance.\
+ - No CMS updates
+ - No worrying whether the latest CMS update will break the site.
+ - No migration task ahead, when the CMS major version is no longer supported, and it only runs on outdated PHP versions, which have security problems 
+ - No server updates
+ - No database problems
+- It frees your content. By choosing a static site generator which generates the site from markdown files, you can easily:
+ - Manage content. For example its easy to send the content files to translation
+ - Migrate content to another static site generator that supports markdown files (many do)
+ - Use the content for other purposes. For example generate PDFs
+- Static site generators are maturing.
+ - They are feature-rich
+ - They are fast
+ - They have many templates
+ - They are backed by large communities
+ - Its a pleasure to work with
+
+-->
+
+<!--
+your content can easily be moved around and used for other purposes -- most static site generators are capable of generating a website from markdown files, which makes it relatively easy to migrate content between site generators. Markdown files can also be used to generate PDF's and Latex documents
+If you for example use markdown files for your content
+If for example you choose a static site generator which generates sites from markdown files, 
+Text files in a filesystem are more easier to move around than content in a database
+Static is trending. And for good reasons. First of all, performance is great -- the whole site can be put on a CDN. Also, security is as great as it comes. No more worrying whether your CMS has security issues not yet discovered (it probably has). Also, no worrying whether the latest CMS update will break the site. And no migration task ahead, when the CMS major version is no longer supported, and it only runs on outdated PHP versions, which have security problems. No server updates. 
+
+#Also, your content can easily be moved around and used for other purposes -- most static site generators are capable of generating a website from markdown files, which makes it relatively easy to migrate content between site generators. Markdown files can also be used to generate PDF's and Latex documents
+
+#And of course, your static website can still be dynamic. Want users to be able to comment your articles? - use Discuss. Want a webform? - use [Formspree]https://formspree.io). Want something custom? We can implement it with javascript which calls another server.
+
+#Some CDN's even provide meassures against DDOS attacks.
+#Fast websites which can be put on CDN. Great security. No mingling with CMS updates, webserver updates or database issues. And the static site generators are maturing, making it easy and even fun to build static. And its well suited for both for small websites such as blogs and large feature-rich websites. MailChimp is for example a static website.
+-->
+
+<h2 id="performance">Performance</h2>
+
+<p>No one loves a slow website. Neither do Google (and their ranking algorithm). Luckily there are many low hanging fruits and in many cases performance can be drastically improved with just a couple of hours of effort</p>
+
+<p>Here are some techniques that we use:</p>
+
+<ul>
+<li>Examine the waterfall chart in order to spot bottlenecks</li>
+<li>Move static ressources such as images, CSS and javascript to CDN (also in Wordpress and Drupal)</li>
+<li>Concatenate CSS and javascript (also in Wordpress and Drupal)</li>
+<li>Order scripts and styles for best performance (also in Wordpress and Drupal)</li>
+<li>Defer javascript that can be deferred</li>
+<li>Use <a href="http://picoquery.com" target="_blank">picoquery</a> instead of jQuery whenever possible. picoQuery is actually developed by us.</li>
+<li>Migration to a static website generator is a possibility. Migration tools are available for many CMS&rsquo;es and static site generators. Btw: The website you are now visiting is build with a static site generator, namely <a href="http://gohugo.io" target="_blank">Hugo</a>. Its fast, isn&rsquo;t it?</li>
+<li>Move entire static sites to CDN</li>
+<li>Use SVG&rsquo;s and SVG-tricks for icons</li>
+<li>Use webp images on clients that supports it</li>
+<li>Prefer pure CSS to script when possible. For example, the responsive menu on this site is pure CSS.</li>
+</ul>
+
+<!--This is what we do:
+## Consulting
+Anything involving CSS, Javascript, PHP, Apache configuration, Databases, jQuery
+
+- Anything involving CSS, Javascript, PHP, Apache configuration, Databases, jQuery
+-->
+
+          </article>
+        </main>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

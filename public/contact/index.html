@@ -1,0 +1,459 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:title" content="bitwise">
+<meta property="og:image" content="http://picoquery.com/img/logo.png">
+<meta property="og:url" content="http://bitwise-it.dk/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="bitwise">
+<style>
+
+html, body, #wrap3 {
+  min-height: 90vh;
+}
+body {
+  margin: 0px auto;
+  font-size: 1.1em;
+  position: relative;
+  line-height: 1.3;
+  font-family: 'Open Sans', sans-serif;
+  background-color: brown;
+  padding: 0px 20px 22px;
+}
+#wrap3 {
+  margin: 0px auto;
+  max-width: 1300px;
+  background-image: url(/images/bg.png);
+  background-size: 300px;
+  box-sizing: border-box;
+  padding: 10px 0 80px;
+ 
+}
+@keyframes bg {
+    from {background-position: 0 0px;}
+    to {background-position: 0px -240px;}
+}
+
+
+#wrap2 {
+  margin: 0 auto;
+  max-width: 1000px;
+  border: 1px solid transparent;
+  position: relative;
+}
+#table {
+  position: relative;
+  background-color: white;
+  display: table;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+
+}
+#table > * {
+  display: table-cell;
+}
+pre {
+  padding: 16px;
+  overflow: auto;
+  line-height: 2.45;
+  word-wrap: normal;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  word-wrap: normal;
+  margin-top: 0;
+  font: 12px monospace;
+  color: #333;
+  line-height:20px;
+}
+
+h1, h2, h3 {
+  font-family: monospace;
+  text-transform: uppercase;
+  margin: 27px 0 10px;
+  font-weight: normal;
+  color: #2f7ea0;
+}
+h1 {
+  font-size: 24px;
+ 
+  letter-spacing: 7px;
+  margin: 27px 0;
+ 
+  text-align: center;
+  border-bottom: 1px solid #2f7ea0;
+}
+h2 {
+  font-size: 21px;
+  letter-spacing: 1px;
+}
+h3 {
+  font-size: 18px;
+}
+p {
+  margin: 10px 0;
+}
+
+article a {
+  color: #2f7ea0; 
+  text-decoration: none;
+}
+
+sidebar {
+  width: 202px;
+}
+main {
+  padding: 0 20px 0 40px;
+}
+article {
+  position: relative;
+}
+
+#logo {
+  position: absolute;
+  top: 2px;
+  left: 20px;
+}
+
+#logo > img {
+  width: 166px;
+}
+
+#logo > img:hover {
+  animation: slant 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes slant {
+  from {transform: rotate(0)}
+  to {transform: rotate(4deg)}
+}
+article a:hover {
+  display: inline-block;
+ 
+}
+@keyframes logo {
+  from {background-position: 0 0px;}
+  to {background-position: 0px -240px;}
+}
+
+
+ 
+ 
+#drop {
+  display: none;
+}
+nav {
+  font-size: 16px;
+  margin-top: 17px;
+  margin-right: 4px;
+  display: inline-block;
+  float: right;
+}
+nav ul {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+  margin: 0;
+}
+nav li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  border: 1px solid white;
+  background-color: #2f7ea0;
+}
+
+nav > ul > li {
+}
+nav li li {
+  border-top: 1px solid #ccc;
+}
+nav li ul {
+  position: absolute;
+  display: none;
+  z-index: 200;
+}
+nav li:hover ul {
+  display: block;
+}
+nav li li {
+  padding-left: 0;
+  background-color: #e0e0e0;
+  font-size: 15px;
+  display: block;
+}
+nav li a {
+  margin-left: 0;
+}
+nav li > a {
+  padding: 3px 20px;
+}
+nav li li > a {
+  border-width: 0;
+}
+nav a:hover {
+  background-color: brown;
+  color: white;
+}
+
+#menu {
+  height: 50px;
+}
+#menu_btn {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  body {
+    padding: 5px 0 0;
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    padding: 0;
+  }
+
+
+   
+
+  #menu_btn {
+    display: block;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 4px;
+    right: 9px;
+  }
+  #menu_btn svg {
+    cursor: pointer;
+    display: block;
+    padding: 7px;
+  }
+  #menu_btn:hover {
+    border: 1px solid #017498;
+    padding: 2px 3px;
+    margin: -3px -4px;
+    border-radius: 9px;
+    background-color: rgba(1,104,128,0.8);
+ 
+  }
+  nav {
+    display: none;
+  }
+ 
+
+  #drop:checked + nav {
+    display: block;
+  }
+  nav {
+    background-image: url(/images/bg.png);
+
+ 
+    position: absolute;
+    right: 12px;
+    z-index: 200;
+    top: 27px;
+  }
+  nav {
+    animation:animatefadein 0.2s;
+  }
+  @keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+  @keyframes animateright{from{right:-300px;opacity:0} to{right:14px;opacity:1}}
+  @keyframes animatefadein{
+    from{opacity:0} 
+    to{opacity:100%}
+  }
+  @keyframes animatezoom{
+    from{transform:scale(0)} 
+    to{transform:scale(1)}
+  }
+  @keyframes animatezoomout{
+    from{
+      transform:scale(1);
+    } 
+    to{
+      transform:scale(0);
+    }
+  }
+
+  nav li ul {
+    display: block;
+    position: static;
+  }
+
+  nav {
+    font-size: 16px;
+    border: 1px solid white;
+  }
+  nav ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav li {
+    display: block;
+    margin: 0;
+  }
+  nav li a {
+    border: none;
+  }
+
+  nav li {
+    border-top: 1px solid #ccc;
+  }
+  nav li li {
+    padding-left: 0;
+    background-color: #e0e0e0;
+  }
+  nav li a {
+    margin-left: 0;
+  }
+  nav li > a {
+    padding: 6px 15px;
+  }
+  nav li li > a {
+    padding: 4px 20px 4px 30px;
+  }
+  nav li li li > a {
+    padding-left: 50px;
+  }
+  nav a:hover {
+    background-color: #c55a5a;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+  #table {
+    display: block;
+  }
+  #table > * {
+    display: block;
+  }
+  body {
+    padding-top: 0;
+  }
+   
+}
+
+</style>
+  <title>Contact</title>
+</head>
+
+<body>
+  <div id="wrap3">
+    <div id="wrap2">
+      <a href="/" id="logo"><img src="/images/logo-white.svg" alt=""></a>
+
+      <div id="menu">
+        <div id="menu_btn">
+          <label for="drop">
+            <svg width="26" height="20" viewBox="0 0 13 10">
+              <path d="M0,1 13,1" stroke="#fff" stroke-width="2"/>
+              <path d="M0,5 13,5" stroke="#fff" stroke-width="2"/>
+              <path d="M0,9 13,9" stroke="#fff" stroke-width="2"/>
+            </svg>
+          </label>
+        </div>
+        <input type="checkbox" id="drop" />
+        <nav>
+          <ul>
+            
+            
+                
+              <li>
+              <a href="/contact/">Contact</a>
+            
+            </li>
+            
+          </ul>
+
+        </nav>
+      </div>
+      <div id="table">
+        <main>
+          <article>
+        
+
+<h1 id="contact">Contact</h1>
+
+<pre style="display: inline-block;font-size:18px">
+bitwise
+Tavlekærsvej 81
+DK-2650 Hvidovre
+CVR: 21 95 05 99
+</pre>
+
+<p><img src="/images/rosell.jpg" align=left style="margin-right:20px;padding-bottom:20px;"></p>
+
+<h3 id="bjørn-rosell-small-bsc-computer-science-owner-web-developer-small">Bjørn Rosell, <small><em>BSc. Computer Science, Owner, Web developer</em></small></h3>
+
+<p>Bjørn has been developing web applications and setting up websites for almost two decades. He is skilled in both frontend and backend. When not programming, he is probably playing with his kids, reading graphic novels or perhaps playing his guitar.</p>
+
+<p><style>
+.circle-link {
+  padding: 13px;
+  border-radius: 44px;
+  box-sizing: content-box;
+  background-color: #2f7ea0;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  border: 2px solid #4078c0;
+  margin-bottom: 10px;<br />
+  display: block;
+  margin-right: 10px
+}
+.circle-link:hover {
+  background-color: white;
+  color: #2f7ea0;
+  border: 2px solid #333;
+}
+.circle-link svg {
+  fill: currentcolor;
+  stroke: currentcolor;
+  width: 24px;
+  height: 24px;
+  display: block;
+}</p>
+
+<p></style>
+<div style="display:table;">
+<a href="mailto:it@rosell.dk" class="circle-link"><svg role="img" class="social-email" aria-labelledby="social-email"><title id="social-email">[Normal mode of contact] &ndash; write me an email at it@rosell.dk</title><use xlink:href="/images/icons.svg#social-email"/></svg></a>
+<a href="tel:+4526745919" class="circle-link"><svg role="img" class="social-phone" aria-labelledby="social-phone"><title id="social-phone">[Direct mode of contact] &ndash; Call me on +45 2674 5919</title><use xlink:href="/images/icons.svg#social-phone"/></svg></a>
+<a href="http://www.linkedin.com/in/bjørn-rosell" class="circle-link"><svg role="img" class="social-linkedin" aria-labelledby="social-linkedin"><title id="social-linkedin">[Get to know more about my professional life on linkedin]</title><use xlink:href="/images/icons.svg#social-linkedin"/></svg></a>
+<!--
+<a href="https://twitter.com/bjorn_rosell" class="circle-link"><svg role="img" class="social-twitter" aria-labelledby="social-twitter"><title id="social-twitter">twitter</title><use xlink:href="/images/icons.svg#social-twitter"/></svg></a>-->
+<a href="https://github.com/rosell-dk/" class="circle-link"><svg role="img" class="social-github" aria-labelledby="social-github"><title id="social-github">I create software and have shared some of it on GitHub</title><use xlink:href="/images/icons.svg#social-github"/></svg></a>
+<a href="http://stackoverflow.com/users/842756/rosell-dk" class="circle-link"><svg role="img" class="social-stackoverflow" aria-labelledby="social-stackoverflow"><title id="social-stackoverflow">I engage in web development on stackoverflow</title><use xlink:href="/images/icons.svg#social-stackoverflow"/></svg></a>
+<a href="https://www.drupal.org/user/222898/track" class="circle-link"><svg role="img" class="social-drupal" aria-labelledby="social-drupal"><title id="social-drupal">drupal</title><use xlink:href="/images/icons.svg#social-drupal"/></svg></a>
+<a href="http://rosell.dk" class="circle-link"><svg role="img" class="social-www" aria-labelledby="social-www"><title id="social-www">[Get to know more about my personal life on my website]</title><use xlink:href="/images/icons.svg#social-www"/></svg></a>
+<!-- TODO: www -->
+<!--
+<a href="https://www.youtube.com/user/tordenalf/videos?sort=dd&shelf_id=0&view=0" class="circle-link"><svg role="img" class="social-youtube" aria-labelledby="social-youtube"><title id="social-youtube">youtube</title><use xlink:href="/images/icons.svg#social-youtube"/></svg></a>--></p>
+
+<p></div></p>
+
+<div style="clear:both">
+
+
+
+</div>
+
+          </article>
+        </main>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
