@@ -1,58 +1,50 @@
 +++
 date = "2017-05-07T21:04:32+02:00"
 draft = false
-title = "Contact"
-translated = true
+description = "Contact bitwise"
+id = "contact"
+headline = "Contact"
+title = "Contact bitwise"
+
 [menu.main]
   parent = ""
-  weight = 1900
+  name = "Contact"
+  weight = 19000
 
 +++
-
-
 # Contact
 
-<pre style="display: inline-block;font-size:18px">
-bitwise
-Tavlekærsvej 81
-DK-2650 Hvidovre
-CVR: 21 95 05 99
-</pre>
+<div class="letstalk">
+  <div>
+    <a href="mailto:it@rosell.dk" class="circle-link big" style="float:left"><svg role="img" class="social-email" aria-labelledby="social-email"><title id="social-email">[Normal mode of contact] -- write me an email at it@rosell.dk</title><use xlink:href="/images/icons.svg#social-email"/></svg></a>
+    <div>
+      <span>Email me at:</span><br>
+      <a href="mailto:rosell@bitwise-it.dk" class="no-arrow">rosell@bitwise-it.dk</a>  
+    </div>
+  </div><br>
+  <div>
+    <a href="tel:+4526745919" class="circle-link big"><svg role="img" class="social-phone" aria-labelledby="social-phone"><title id="social-phone">[Direct mode of contact] -- Call me on +45 2674 5919</title><use xlink:href="/images/icons.svg#social-phone"/></svg></a>
+    <div>
+      <span>&mdash; Or call me directly:</span><br>
+      <a href="tel:+4526745919" class="no-arrow">+45 26745919</a>
+    </div>
+  </div>
+</div>
 
 
-<img src="/images/rosell.jpg" align=left style="margin-right:20px;padding-bottom:20px;">
+# About "us"
+
+
+<picture class="box right no-padding">
+  <source srcset="/images/rosell2.webp" type="image/webp">
+  <img src="/images/rosell2.jpg" alt="Bjørn Rosell">
+</picture>
+
 ### Bjørn Rosell, <small>*BSc. Computer Science, Owner, Web developer*</small>
 
-Bjørn has been developing web applications and setting up websites for almost two decades. He is skilled in both frontend and backend. When not programming, he is probably playing with his kids, reading graphic novels or perhaps playing his guitar.
+Bjørn has been developing web applications and setting up websites for almost two decades. He is skilled in both frontend and backend. When not programming, he is probably playing with his kids, reading graphic novels or perhaps playing his guitar. <!--Most frequently used sentence: "Done"-->
 
-<style>
-.circle-link {
-  padding: 13px;
-  border-radius: 44px;
-  box-sizing: content-box;
-  background-color: #2f7ea0;
-  color: white;
-  text-align: center;
-  display: inline-block;
-  border: 2px solid #4078c0;
-  margin-bottom: 10px;  
-  display: block;
-  margin-right: 10px
-}
-.circle-link:hover {
-  background-color: white;
-  color: #2f7ea0;
-  border: 2px solid #333;
-}
-.circle-link svg {
-  fill: currentcolor;
-  stroke: currentcolor;
-  width: 24px;
-  height: 24px;
-  display: block;
-}
 
-</style>
 <div style="display:table;">
 <a href="mailto:it@rosell.dk" class="circle-link"><svg role="img" class="social-email" aria-labelledby="social-email"><title id="social-email">[Normal mode of contact] -- write me an email at it@rosell.dk</title><use xlink:href="/images/icons.svg#social-email"/></svg></a>
 <a href="tel:+4526745919" class="circle-link"><svg role="img" class="social-phone" aria-labelledby="social-phone"><title id="social-phone">[Direct mode of contact] -- Call me on +45 2674 5919</title><use xlink:href="/images/icons.svg#social-phone"/></svg></a>
@@ -70,9 +62,9 @@ Bjørn has been developing web applications and setting up websites for almost t
 </div>
 
 <div style="clear:both">
-
-
-
+</div>
+<div style="font-size:18px; background-color:#2f7ea0; padding: 10px 20px;  text-align: center; color: white; margin-top: 20px">
+bitwise, Tavlekærsvej 81, DK-2650 Hvidovre. CVR: 21 95 05 99
 </div>
 
 

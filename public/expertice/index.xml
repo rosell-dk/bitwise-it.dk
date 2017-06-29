@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Expertice on bitwise</title>
+    <link>http://www.bitwise-it.dk/expertice/</link>
+    <description>Recent content in Expertice on bitwise</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 04 May 2017 21:04:32 +0200</lastBuildDate>
+    
+	<atom:link href="http://www.bitwise-it.dk/expertice/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Static website generators</title>
+      <link>http://www.bitwise-it.dk/expertice/static-website-generators/</link>
+      <pubDate>Wed, 17 May 2017 09:49:02 +0200</pubDate>
+      
+      <guid>http://www.bitwise-it.dk/expertice/static-website-generators/</guid>
+      <description>Static website generators In short, the two major benefits for building a website with a static website generator are the great performance and security that comes with static websites. There are other benefits. The most significant drawback is that it requires more technological skill, from the content managers than i.e. Wordpress does.
+Performance benefits For many, performance is the most attracting feature of static websites. MailChimp for example listed performance as a major reason for going static in their public announcement.</description>
+    </item>
+    
+  </channel>
+</rss>

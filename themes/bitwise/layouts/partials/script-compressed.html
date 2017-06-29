@@ -1,0 +1,8 @@
+{{ if or (eq .Params.toc true) (and (gt .WordCount 400 ) (ne .Params.toc false)) }}
+<script>
+/* Compressed with https://closure-compiler.appspot.com/home */ 
+document.addEventListener("DOMContentLoaded",function(e){var b=[].slice.call(document.getElementById("toc").getElementsByTagName("A")),d=b.map(function(a){return a.getAttribute("href").substr(1)}).map(function(a){return document.getElementById(a)}),c=0;window.addEventListener("scroll",function(a){for(a=d.length;0<a;)if(a--,30>d[a].getBoundingClientRect().top){if(a==c)break;b[c].setAttribute("class","");b[a].setAttribute("class","active");c=a;break}})});
+</script>
+{{ end }}
+
+

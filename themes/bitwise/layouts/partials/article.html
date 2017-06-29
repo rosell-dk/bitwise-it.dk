@@ -1,0 +1,13 @@
+<article>
+{{ partial "before-content.html" . }}
+
+{{ if or (eq .Params.toc true) (and (gt .WordCount 400 ) (ne .Params.toc false)) }}
+<div id="toc">
+<!--<b>In this article</b>-->
+{{ .TableOfContents }}
+</div>
+{{ end }}
+<div id="content">
+{{ .Content }}
+</div>
+</article>

@@ -5,29 +5,82 @@
     <link>http://www.bitwise-it.dk/</link>
     <description>Recent content on bitwise</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 07 May 2017 21:04:32 +0200</lastBuildDate>
+    <language>en</language>
+    <lastBuildDate>Thu, 04 May 2017 21:04:32 +0200</lastBuildDate>
     
 	<atom:link href="http://www.bitwise-it.dk/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Contact</title>
+      <title>instant</title>
+      <link>http://www.bitwise-it.dk/blog/instant/</link>
+      <pubDate>Thu, 15 Jun 2017 12:02:51 +0200</pubDate>
+      
+      <guid>http://www.bitwise-it.dk/blog/instant/</guid>
+      <description>This post will be about my Hugo theme, &amp;ldquo;Instant&amp;rdquo; (it could also be called &amp;ldquo;Turbo&amp;rdquo;).</description>
+    </item>
+    
+    <item>
+      <title>webp on demand</title>
+      <link>http://www.bitwise-it.dk/blog/webp-on-demand/</link>
+      <pubDate>Fri, 02 Jun 2017 13:14:38 +0200</pubDate>
+      
+      <guid>http://www.bitwise-it.dk/blog/webp-on-demand/</guid>
+      <description>webp on demand I here present a solution for generating and serving a webp image when a jpeg or png image is requested. When the webserver receives a request for a jpeg image that it hasn&amp;rsquo;t converted yet, it converts the file and stores it as ie &amp;ldquo;logo.jpg.webp&amp;rdquo;. On next request for the same image, the request is routed directly to the generated image. The location of the generated file is customizable.</description>
+    </item>
+    
+    <item>
+      <title>how moving assets to cdn didnt improve performance</title>
+      <link>http://www.bitwise-it.dk/blog/how-moving-assets-to-cdn-didnt-improve-performance/</link>
+      <pubDate>Thu, 01 Jun 2017 10:58:34 +0200</pubDate>
+      
+      <guid>http://www.bitwise-it.dk/blog/how-moving-assets-to-cdn-didnt-improve-performance/</guid>
+      <description>Sometimes a ressource takes a long time to fetch, even though CloudFront repports a hit
+https://www.webpagetest.org/result/170601_AC_HCY/1/details/#waterfall_view_step1</description>
+    </item>
+    
+    <item>
+      <title>beware of extra dns lookups</title>
+      <link>http://www.bitwise-it.dk/blog/beware-of-extra-dns-lookups/</link>
+      <pubDate>Thu, 01 Jun 2017 10:01:33 +0200</pubDate>
+      
+      <guid>http://www.bitwise-it.dk/blog/beware-of-extra-dns-lookups/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wordpress speed optimization with minimal effort</title>
+      <link>http://www.bitwise-it.dk/blog/wordpress-speed-optimization-with-minimal-effort/</link>
+      <pubDate>Wed, 31 May 2017 09:20:32 +0200</pubDate>
+      
+      <guid>http://www.bitwise-it.dk/blog/wordpress-speed-optimization-with-minimal-effort/</guid>
+      <description>Wordpress speed optimization with minimal effort A case study of improving speed of a simple Wordpress site The website http://www.mingo.net wasn&amp;rsquo;t running very quickly. My task was to make it faster with just a few means.
+Before optimizing Let&amp;rsquo;s see what we got. Using webpagetest.org, here is a waterfall view of requests made, when visiting the frontpage:
+ (click on the image to see the complete report)
+Not good. 3.</description>
+    </item>
+    
+    <item>
+      <title>Static website generators</title>
+      <link>http://www.bitwise-it.dk/expertice/static-website-generators/</link>
+      <pubDate>Wed, 17 May 2017 09:49:02 +0200</pubDate>
+      
+      <guid>http://www.bitwise-it.dk/expertice/static-website-generators/</guid>
+      <description>Static website generators In short, the two major benefits for building a website with a static website generator are the great performance and security that comes with static websites. There are other benefits. The most significant drawback is that it requires more technological skill, from the content managers than i.e. Wordpress does.
+Performance benefits For many, performance is the most attracting feature of static websites. MailChimp for example listed performance as a major reason for going static in their public announcement.</description>
+    </item>
+    
+    <item>
+      <title>Contact bitwise</title>
       <link>http://www.bitwise-it.dk/contact/</link>
       <pubDate>Sun, 07 May 2017 21:04:32 +0200</pubDate>
       
       <guid>http://www.bitwise-it.dk/contact/</guid>
-      <description>Contact bitwise Tavlekærsvej 81 DK-2650 Hvidovre CVR: 21 95 05 99  Bjørn Rosell, BSc. Computer Science, Owner, Web developer Bjørn has been developing web applications and setting up websites for almost two decades. He is skilled in both frontend and backend. When not programming, he is probably playing with his kids, reading graphic novels or perhaps playing his guitar.
- .circle-link { padding: 13px; border-radius: 44px; box-sizing: content-box; background-color: #2f7ea0; color: white; text-align: center; display: inline-block; border: 2px solid #4078c0; margin-bottom: 10px;</description>
-    </item>
-    
-    <item>
-      <title>bitwise is a tiny IT company based in Copenhagen</title>
-      <link>http://www.bitwise-it.dk/</link>
-      <pubDate>Thu, 04 May 2017 21:04:32 +0200</pubDate>
-      
-      <guid>http://www.bitwise-it.dk/</guid>
-      <description>bitwise is a tiny IT company based in Copenhagen. We create websites and web applications Expertice Wordpress and Drupal  Installation Creation of templates/themes from either HTML or a graphical layout Setting up various plugins needed for the solution Custom plugin development Migration Insight into the inner workings of Wordpress and Drupal  Custom web applications  Custom web applications from scratch, ie on a LAMP stack To rapidly create an application, we sometimes use CakePHP  Static websites Static websites are trending, and for good reasons.</description>
+      <description>Contact  [Normal mode of contact] -- write me an email at it@rosell.dk  Email me at:
+rosell@bitwise-it.dk  
+ [Direct mode of contact] -- Call me on +45 2674 5919  &amp;mdash; Or call me directly:
++45 26745919    About &amp;ldquo;us&amp;rdquo; 
+Bjørn Rosell, BSc. Computer Science, Owner, Web developer Bjørn has been developing web applications and setting up websites for almost two decades. He is skilled in both frontend and backend.</description>
     </item>
     
   </channel>

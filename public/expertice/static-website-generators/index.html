@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="bitwise">
+<meta property="og:image" content="http://picoquery.com/img/logo.png">
+<meta property="og:url" content="http://bitwise-it.dk/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="bitwise">
+<meta name="author" content="Bjørn Rosell"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<meta name="generator" content="Hugo 0.21" />
+<title>Static website generators</title>
+<script>
+  
+document.addEventListener("DOMContentLoaded",function(e){var b=[].slice.call(document.getElementById("toc").getElementsByTagName("A")),d=b.map(function(a){return a.getAttribute("href").substr(1)}).map(function(a){return document.getElementById(a)}),c=0;window.addEventListener("scroll",function(a){for(a=d.length;0<a;)if(a--,30>d[a].getBoundingClientRect().top){if(a==c)break;b[c].setAttribute("class","");b[a].setAttribute("class","active");c=a;break}})});
+</script>
+
+
+
+
+<style>
+ 
+
+html, body, #wrap3 {
+  min-height: 90vh;
+}
+body {
+  margin: 0 auto;
+  font-size: 17px;
+  position: relative;
+  line-height: 1.5;
+  font-family: sans-serif;
+  background-color: #a52a2a;
+  padding: 0 20px 22px;
+  color: #333;
+}
+#wrap3 {
+  margin: 0 auto;
+  max-width: 1300px;
+  background-image: url(data:image/png;base64,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);
+  box-sizing: border-box;
+  padding: 10px 0 80px;
+ 
+}
+@keyframes bg {
+    from {background-position: 0 0;}
+    to {background-position: 0 -240px;}
+}
+
+
+#wrap2 {
+  margin: 0 auto;
+  max-width: 1000px;
+  border: 1px solid transparent;
+  position: relative;
+}
+#table {
+  position: relative;
+  background-color: #fff;
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+#table > * {
+  display: table-cell;
+}
+pre {
+  overflow: auto;
+  word-wrap: normal;
+  margin-top: 0;
+  font: 12px monospace;
+  line-height:18px;
+  max-height: 250px;
+  display: inline-block;
+}
+
+h1, h2 {
+  font-family: monospace;
+  margin: 27px 0 10px;
+  font-weight: 400;
+  color: #2f7ea0;
+}
+h1 {
+  text-transform: uppercase;
+  font-size: 21px;
+  letter-spacing: 7px;
+  margin: -2px 0 30px;
+  background-color: #2f7ea0;
+  padding: 3px;
+  color: #fff;
+  text-align: center;
+ 
+}
+h2 {
+  font-size: 23px;
+ 
+ 
+ 
+ 
+ 
+ 
+
+}
+h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: #2f7ea0;
+  letter-spacing: 1px;
+ 
+}
+p {
+  margin: 10px 0;
+}
+
+ 
+main a {
+  text-decoration: underline;
+  color: #000;
+}
+ 
+
+#content a[target]::after {
+  content: "" url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20class='i-external'%20viewBox='0%200%2032%2032'%20width='14'%20height='14'%20fill='none'%20stroke='%23000000'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='9.38%'%3E%3Cpath%20d='M14%209%20L3%209%203%2029%2023%2029%2023%2018%20M18%204%20L28%204%2028%2014%20M28%204%20L14%2018'/%3E%3C/svg%3E");
+  margin-left: 5px;
+}
+#content a[target].no-icon::after {
+  content: "";
+  margin-left: 0;
+}
+
+sidebar {
+  width: 202px;
+}
+main {
+  padding: 0 40px 40px;
+}
+article {
+  position: relative;
+}
+
+#logo {
+  position: absolute;
+  top: 2px;
+  left: 20px;
+}
+
+#logo > img {
+  width: 166px;
+}
+
+#logo > img:hover {
+  animation: slant 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes slant {
+  from {transform: rotate(0)}
+  to {transform: rotate(4deg)}
+}
+@keyframes logo {
+  from {background-position: 0 0;}
+  to {background-position: 0 -240px;}
+}
+
+translations {
+  display: block;
+  text-align: right;
+  padding-top: 13px;
+}
+translation a {
+  padding-left: 8px;
+  text-decoration: none;
+}
+translation.selected a {
+  font-weight: 700;
+}
+translation.unavailable a {
+  text-decoration: line-through;
+  color: #333;
+}
+
+.header-image {
+  text-align: center; 
+  position: relative;
+  padding-top: 10px;
+}
+
+picture {
+  display: inline-block;
+  text-align: left;
+}
+picture img {
+  display: block;
+  width:100%;
+}
+
+.box {
+  display: block;  
+  border: 1px solid #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align:center;
+}
+.box.left {
+  float: left;
+  margin: 0 30px 10px 0;
+}
+.box.right {
+  float: right;
+  margin: 0 0 10px 20px;
+}
+.box img {
+}
+.no-padding {
+  padding: 0;
+}
+.no-border {
+  border: none;
+}
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.button > *, a.button {
+  padding: 6px 15px;
+  background-color:#2f7ea0;
+  color: #fff;
+  text-decoration:none;
+}
+a.button {
+  display: inline-block;  
+}
+a.button:hover {
+  color:#2f7ea0;
+  background-color: #fff;
+  text-decoration: none;
+  outline: 2px solid #2f7ea0;
+}
+
+ 
+ 
+#drop {
+  display: none;
+}
+#mainnav {
+  font-size: 16px;
+  margin-top: 17px;
+  margin-right: 4px;
+  display: inline-block;
+  float: right;
+}
+#mainnav ul {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#mainnav li {
+  display: inline-block;
+  margin: 0;
+}
+#mainnav li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  border: 1px solid #fff;
+  background-color: #2f7ea0;
+}
+
+#mainnav li li {
+  border-top: 1px solid #ccc;
+}
+#mainnav li ul {
+  position: absolute;
+  display: none;
+  z-index: 200;
+}
+#mainnav li:hover ul {
+  display: block;
+}
+#mainnav li li {
+  padding-left: 0;
+  background-color: #e0e0e0;
+  font-size: 15px;
+  display: block;
+}
+#mainnav li a {
+  margin-left: 0;
+}
+#mainnav li > a {
+  padding: 3px 20px;
+}
+#mainnav li li > a {
+  border-width: 0;
+}
+#mainnav a:hover {
+  background-color: #a52a2a;
+  color: #fff;
+}
+
+#menu {
+  height: 50px;
+}
+#menu_btn {
+  display: none;
+}
+
+#toc {
+  display:none;
+}
+ 
+@media (min-width: 800px) {
+  .has-toc #content,
+  .has-toc .header-image {
+    margin-right: 280px;
+  }
+  #toc {
+    display:block;
+  }
+  main {
+    padding-right: 30px;
+  }
+}
+#toc > b {
+}
+#toc  {
+  border: 1px solid #000;
+  padding: 15px 20px;
+  background-color: #fff;
+  width: 220px;
+  right: 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 15px;
+  float: right;
+  margin-top: -2px;
+
+}
+#TableOfContents ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#TableOfContents a {
+  text-decoration: none;
+  font-size: 12px;
+  display: block;
+  padding: 3px 10px;
+  border-left: 2px solid transparent;
+}
+#TableOfContents a:hover {
+}
+#TableOfContents a.active {
+  border-left-color: #2f7ea0;
+}
+#TableOfContents li li li {
+  padding-left: 20px;
+}
+#TableOfContents > ul > li > a {
+  display: block;
+  border-bottom: 1px solid #000;
+  border-left: none;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+  body {
+    padding: 5px 0 0;
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    padding: 0 20px 20px;
+  }
+
+
+   
+
+  #menu_btn {
+    display: block;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 4px;
+    right: 9px;
+  }
+  #menu_btn svg {
+    cursor: pointer;
+    display: block;
+    padding: 7px;
+  }
+  #menu_btn:hover {
+    border: 1px solid #017498;
+    padding: 2px 3px;
+    margin: -3px -4px;
+    border-radius: 9px;
+    background-color: rgba(1,104,128,0.8);
+ 
+  }
+  #mainnav {
+    display: none;
+  }
+ 
+
+  #drop:checked + #mainnav {
+    display: block;
+  }
+  #mainnav {
+    background-image: url(/images/bg.png);
+
+ 
+    position: absolute;
+    right: 12px;
+    z-index: 200;
+    top: 27px;
+  }
+  #mainnav {
+    animation:animatefadein .2s;
+  }
+  @keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+  @keyframes animateright{from{right:-300px;opacity:0} to{right:14px;opacity:1}}
+  @keyframes animatefadein{
+    from{opacity:0} 
+    to{opacity:100%}
+  }
+  @keyframes animatezoom{
+    from{transform:scale(0)} 
+    to{transform:scale(1)}
+  }
+  @keyframes animatezoomout{
+    from{
+      transform:scale(1);
+    } 
+    to{
+      transform:scale(0);
+    }
+  }
+
+  #mainnav li ul {
+    display: block;
+    position: static;
+  }
+
+  #mainnav {
+    font-size: 16px;
+    border: 1px solid #fff;
+  }
+  #mainnav ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  #mainnav li {
+    display: block;
+    margin: 0;
+  }
+  #mainnav li a {
+    border: none;
+  }
+
+  #mainnav li {
+    border-top: 1px solid #ccc;
+  }
+  #mainnav li li {
+    padding-left: 0;
+    background-color: #e0e0e0;
+  }
+  #mainnav li a {
+    margin-left: 0;
+  }
+  #mainnav li > a {
+    padding: 6px 15px;
+  }
+  #mainnav li li > a {
+    padding: 4px 20px 4px 30px;
+  }
+  #mainnav li li li > a {
+    padding-left: 50px;
+  }
+  #mainnav a:hover {
+    background-color: #c55a5a;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+  #table {
+    display: block;
+  }
+  #table > * {
+    display: block;
+  }
+  body {
+    padding-top: 0;
+  }
+   
+}
+</style>
+
+
+
+
+
+</head>
+
+
+<body class="has-toc">
+
+  
+<div id="wrap3">
+  <div id="wrap2">
+    <a href="/" id="logo"><svg xmlns="http://www.w3.org/2000/svg" height="40px" width="166px" viewBox="0 0 108.55469 25.80735"><g><g fill="#fff"><path d="M4.785 0v9.93l3.76-1.385c2.316-.084 4.65.875 6.238 2.563 1.5 1.595 2.312 3.793 2.307 5.982-.005 2.187-.824 4.374-2.307 5.98-1.577 1.71-3.92 2.725-6.238 2.565-1.348-.093-2.667-.573-3.76-1.367v1.367H0V.017zm-.77 16.71l4.36 4.994 4.613-4.956-4.614-4.255-3.59 3.366z"/><path d="M20.525 25.635V8.528h4.785v17.107h-4.785zm-.17-21.192c-.002.63.23 1.27.683 1.71.49.476 1.196.683 1.88.683.683 0 1.39-.207 1.88-.684.45-.44.684-1.078.683-1.71 0-.628-.234-1.265-.683-1.708-.496-.49-1.216-.708-1.914-.7-.674.007-1.365.227-1.845.7-.45.442-.683 1.08-.684 1.71zM40.024 24.832c-.86.48-1.834.758-2.82.803-1.668.076-3.35-.53-4.614-1.624-.592-.512-1.092-1.144-1.38-1.874-.285-.73-.33-1.528-.33-2.312v-7.4H28.32V8.562h2.563v-4.63l4.804-.514v5.144h2.563v3.862h-2.563v6.717c0 .346.004.694.083 1.03.08.336.236.658.48.902.192.19.433.33.69.416.255.088.527.125.797.13.437.01.874-.067 1.282-.222l1.008 3.436zM55.645 25.635h4.272L64.48 8.528h-4.495l-2.63 10.27L54.91 8.53h-3.538l-2.563 10.1-2.65-10.1h-4.495l4.58 17.107h4.273l2.563-8.562 2.565 8.562zM67.898 25.635V8.528h4.785v17.107h-4.785zm-.17-21.192c-.002.63.23 1.27.683 1.71.49.476 1.197.683 1.88.683.684 0 1.39-.207 1.88-.684.453-.44.685-1.078.684-1.71 0-.628-.235-1.265-.684-1.708-.496-.49-1.216-.708-1.914-.7-.674.007-1.365.227-1.845.7-.448.442-.682 1.08-.683 1.71zM82.766 8.442c1.27-.07 2.566.095 3.743.58.94.39 1.798.984 2.494 1.728l-2.666 3.007c-.85-.67-1.85-1.147-2.905-1.384-.42-.094-.86-.15-1.282-.065-.21.042-.416.12-.595.24-.18.12-.332.282-.43.474-.09.18-.133.38-.13.58.003.2.05.4.13.583.183.42.543.76.972.918.43.16.923.135 1.336-.064 1.51-.15 3.077.397 4.17 1.452 1.12 1.08 1.718 2.668 1.623 4.22-.088 1.447-.78 2.86-1.914 3.76-1.237.984-2.88 1.31-4.46 1.334-1.38.02-2.774-.165-4.05-.684-1.04-.42-1.988-1.06-2.77-1.863l2.65-2.99 3.606 1.605c.418.233.925.3 1.39.184.464-.117.88-.415 1.14-.817.12-.19.21-.4.243-.622.035-.22.014-.452-.072-.66-.098-.232-.275-.427-.486-.565-.212-.14-.455-.224-.703-.27-.497-.094-1.007-.04-1.512-.036-1.375.01-2.783-.39-3.83-1.282-1.123-.96-1.75-2.453-1.725-3.93.028-1.545.764-3.065 1.966-4.034 1.133-.916 2.61-1.32 4.066-1.402zM91.807 17.09q0-3.76 2.392-6.152 2.392-2.393 6.152-2.393 3.76 0 5.98 2.393 2.223 2.392 2.223 6.152v1.71H96.763q.17 1.366 1.196 2.135 1.024.77 2.392.77 2.392 0 4.272-1.368l2.734 2.734q-1.88 2.565-7.006 2.565-3.76 0-6.153-2.393-2.393-2.392-2.393-6.152zm11.963-1.71q0-1.366-1.026-2.135-1.025-.77-2.392-.77-1.368 0-2.393.77-1.026.77-1.026 2.136h6.836z"/></g></g></svg></a>
+    <div id="menu">
+      <div id="menu_btn">
+        <label for="drop">
+          <svg width="26" height="20" viewBox="0 0 13 10">
+            <path d="M0,1 13,1" stroke="#fff" stroke-width="2"/>
+            <path d="M0,5 13,5" stroke="#fff" stroke-width="2"/>
+            <path d="M0,9 13,9" stroke="#fff" stroke-width="2"/>
+          </svg>
+        </label>
+      </div>
+      <input type="checkbox" id="drop" />
+      <nav id="mainnav">
+        <ul>
+          
+          
+              
+
+            <li class="sub-menu active-trail">
+            
+              <a href="/expertice">
+                
+                <span>Expertice</span>                
+              </a>
+            
+            <ul class="sub">
+                
+                <li class="active"><a href="/expertice/static-website-generators"> Static website generators </a> </li>
+                
+            </ul>
+          
+          </li>
+          
+              
+            <li>
+            <a href="/contact">Contact</a>
+          
+          </li>
+          
+              
+
+            <li class="sub-menu">
+            
+              <a href="javascript:void()">
+                
+                <span>Blog</span>                
+              </a>
+            
+            <ul class="sub">
+                
+                <li><a href="/blog/webp-on-demand"> webp on demand </a> </li>
+                
+            </ul>
+          
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+    <div id="table">
+      <main>
+
+
+
+
+
+<translations>
+
+
+
+  
+      <translation class="unavailable"><a href="/da/">dansk</a></translation>
+  
+<translation class="selected"><a href="http://www.bitwise-it.dk/expertice/static-website-generators">english</a></translation>
+
+</translations>
+<article>
+
+
+
+
+
+
+<div class="header-image">
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 2560 2560" preserveAspectRatio="xMidYMid meet">
+  <g id="layer1" fill="#000000" stroke="none">
+   <path d="M890 2547 c-48 -38 -62 -95 -36 -145 8 -15 97 -109 198 -210 l184 -182 179 2 c112 2 180 7 182 13 2 6 -101 105 -228 220 -376 340 -343 315 -408 315 -31 0 -63 -6 -71 -13z"/>
+   <path d="M776 1900 c-64 -57 -52 -150 24 -192 31 -16 61 -18 287 -18 139 0 253 -2 253 -5 0 -3 -82 -121 -182 -261 -217 -307 -230 -334 -189 -412 44 -83 86 -116 389 -302 128 -79 231 -147 230 -151 -2 -5 -54 -55 -117 -112 l-115 -103 -240 48 c-272 55 -306 56 -348 9 -49 -55 -49 -107 0 -162 26 -29 38 -33 325 -91 164 -33 309 -57 321 -54 19 5 391 275 483 351 18 14 55 67 83 116 46 80 57 110 99 287 l47 197 188 5 188 5 29 33 c25 27 29 41 29 88 0 48 -4 59 -29 85 l-29 29 -261 0 -261 0 -30 -27 c-23 -22 -39 -57 -72 -159 l-43 -132 -185 118 c-113 72 -184 123 -183 132 3 17 203 466 232 523 25 46 27 85 7 124 -33 62 -25 61 -480 61 l-415 0 -35 -30z"/>
+   <path d="M0 1335 l0 -65 420 0 419 0 42 55 c22 30 38 59 34 65 -4 7 -156 10 -461 10 l-454 0 0 -65z"/>
+   <path d="M0 1015 l0 -65 389 0 c215 0 392 4 395 9 5 7 -4 41 -25 99 l-9 22 -375 0 -375 0 0 -65z"/>
+   <path d="M0 695 l0 -65 585 0 c462 0 585 3 585 13 -1 6 -39 36 -86 65 l-86 52 -499 0 -499 0 0 -65z"/>
+   <path d="M2118 540 c-78 -20 -153 -85 -189 -165 -25 -55 -25 -166 1 -222 25 -57 98 -126 148 -141 50 -15 163 -15 214 0 53 16 118 75 148 134 28 57 33 154 11 218 -18 52 -95 134 -147 157 -50 23 -136 31 -186 19z"/>
+   </g>
+  </svg>
+</div>
+
+
+
+
+
+<div id="toc">
+
+<nav id="TableOfContents">
+<ul>
+<li><a href="#static-website-generators">Static website generators</a>
+<ul>
+<li><a href="#performance-benefits">Performance benefits</a></li>
+<li><a href="#security-benefits">Security benefits</a>
+<ul>
+<li><a href="#goodbye-cms-vulnerabilities">Goodbye, CMS vulnerabilities</a></li>
+<li><a href="#goodbye-vulnerabilities-in-lamp-stack">Goodbye, vulnerabilities in LAMP-stack</a></li>
+</ul></li>
+<li><a href="#maintenance-benefits">Maintenance benefits</a>
+<ul>
+<li><a href="#goodbye-cms-updates-upgrades">Goodbye, CMS updates &amp; upgrades</a></li>
+<li><a href="#goodbye-server-maintenance">Goodbye, Server maintenance</a></li>
+</ul></li>
+<li><a href="#content-management">Content management</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+
+<div id="content">
+
+
+<h1 id="static-website-generators">Static website generators</h1>
+
+<p>In short, the two major benefits for building a website with a static website generator are the great performance and security that comes with static websites. There are other benefits. The most significant drawback is that it requires more technological skill, from the content managers than i.e. Wordpress does.</p>
+
+<h2 id="performance-benefits">Performance benefits</h2>
+
+<p>For many, performance is the most attracting feature of static websites. MailChimp for example listed performance as a major reason for going static in their <a href="https://blog.mailchimp.com/building-the-new-mailchimp/" target="_blank">public announcement</a>.</p>
+
+<p>The reason that static websites outperforms dynamic ones is of course that the server does not have to generate content on the fly. But more importantly, static websites can be put on a CDN. CDN&rsquo;s are optimized to deliver static files fast using different techniques, for example replicating the content to multiple servers around the world. Putting files on a CDN is an easy and very affordable way to get good performance.</p>
+
+<p>However, note that while serving static files is much faster than generating them on the fly, good performance is not ensured with static websites. Large chunks of javascript or CSS may cause slow rendering in the browser. The number of external resources must also be kept low to ensure a fast website.</p>
+
+<h2 id="security-benefits">Security benefits</h2>
+
+<p>Security is another major benefit of static websites. Though not completely ensured, much less can go wrong. A weakness on a server capable of executing scripts is much more to be feared than a vulnerability on a server that is not.</p>
+
+<p>Things that may happen on an Apache server, when there is a vulnerability in the CMS, PHP or Apache itself:</p>
+
+<ul>
+<li>malicious code is inserted into your pages. This can in worst case mean that people visiting your site get virus on their computer (yes, you can get a computer virus just from visiting a website which exploit unpatched OS vulnerabilities. The recent <a href="https://en.wikipedia.org/wiki/WannaCry_ransomware_attack" target="_blank">WannaCry</a> attack did just that)</li>
+<li>database is wiped</li>
+<li>your server is exposed to send unsolicited emails</li>
+<li>your server is exposed to engage in DDOS attacks</li>
+</ul>
+
+<h3 id="goodbye-cms-vulnerabilities">Goodbye, CMS vulnerabilities</h3>
+
+<p>In dynamic websites using a CMS such as Drupal or Wordpress, security issues are common. The cores have had many fixes and popular plugins as well. Chances are that there are security problems right now not yet found by the developers, but found by hackers. Also, when security problems in Drupal are fixed, they are announced. Updating the CMS immidiately is not possible, which leaves time for hackers to exploit the weakness before you have your site updated.</p>
+
+<h3 id="goodbye-vulnerabilities-in-lamp-stack">Goodbye, vulnerabilities in LAMP-stack</h3>
+
+<p>CMS&rsquo;es generally run on the LAMP-stack (OS:Linux, Server: Apache, Database: MySQL, script language: PHP). Each of these components can have vulnerabilities.</p>
+
+<p>At the point of writing, there has been:</p>
+
+<ul>
+<li><a href="http://www.cvedetails.com/product/47/Linux-Linux-Kernel.html?vendor_id=33" target="_blank">1027 vulnerabilities found in Linux, 33 public exploits</a></li>
+<li><a href="https://www.cvedetails.com/vendor/45/Apache.html" target="_blank">777 vulnerabilities found in Apache, 24 public exploits</a></li>
+<li><a href="https://www.cvedetails.com/vendor/185/Mysql.html" target="_blank">261 vulnerabilities found in MySQL, 4 public exploits</a></li>
+<li><a href="https://www.cvedetails.com/vendor/74/PHP.html" target="_blank">560 vulnerabilities found in PHP, 42 public exploits</a></li>
+</ul>
+
+<p>Total LAMP-stack vulnerabilities found until now: 2625<br />
+Total LAMP-stack exploits published until now: 103</p>
+
+<h2 id="maintenance-benefits">Maintenance benefits</h2>
+
+<h3 id="goodbye-cms-updates-upgrades">Goodbye, CMS updates &amp; upgrades</h3>
+
+<p>Installing a CMS is fast and cheap. Updating it is not. To stay secure, you need to install updates regularily. As upgrades are known to break sites, you should perform a backup before doing the update. This alone is time-consuming. Also, you should know how to restore the backup, or let someone who does know how to do that perform the update. If downtime is an issue, updating should be tried first on a staging server (= more time consumed). And when the update breaks things, you should know who to call (me, for examle!).</p>
+
+<p>Worse yet, major versions of CMS&rsquo;es <em>expire</em>. This means your site has to be <em>upgraded</em> every five years or so. If you have a large site, this can be expensive. &ldquo;But can&rsquo;t we just STAY on the expired version?&rdquo; - Well, if you DO that, you should of course know that it makes your site vulnerable (no more security updates). But know that there is another issue lurking: 1) PHP versions <em>also</em> expire. 2) PHP is not generally backwards compatible, meaning that a PHP update can break your site. For Drupal 6, this is currently a problem. However, there are vendors out there that provides long term support for Drupal 6 (ie. <a href="https://quo.tag1consulting.com/" target="_blank">Tag 1 Quo</a>). If you are caught up in this mess, you may want to read <a href="https://www.siteground.com/blog/cms-end-of-life/" target="_blank">this article</a> &ndash; or <a href="/contact">contact <em>us</em></a> :)</p>
+
+<h3 id="goodbye-server-maintenance">Goodbye, Server maintenance</h3>
+
+<p>Server maintenance is probably no issue if you are hosting your site on a shared host. But in case you need better performance or a setup that cannot be done on a shared host, you need a server, and also you need that server to be maintained. A VPS itself costs around $10 a month. A &ldquo;Managed VPS&rdquo; without root access costs around $40 a month. Having a VPS updated and secured by a professional costs around $100 USD a month.</p>
+
+<p>With a static site on a CDN, there are no maintenance on your part. And CDN&rsquo;s are cheap. For websites that does not have huge amount of traffic, you can get &ldquo;pay as you go&rdquo; on <a href="https://www.cdn77.com" target="_blank">https://www.cdn77.com</a>, without monthly fees or minimum payments (watch out: many CDN providers sell &ldquo;pay as you go&rdquo; products, where it turns out there is a minimum fee). Their price is currently $0.05/GB. A visit to a website is perhaps 100kb of traffic, meaning that if your site has 1.000.000 visits a month, the price will be $5 a month.</p>
+
+<h2 id="content-management">Content management</h2>
+
+<p>The content management part of a static website generator varies with the generator in question. Generally though, it is filebased and done locally. However, there are tools available to setup a web based control panel for the generator. <a href="https://gohugo.io/tools/" target="_blank">Tools for Hugo</a></p>
+
+<p>A flexible setup allows you both to be able to work on the site offline and online.</p>
+
+<p>Working offline may sound impractical to some. However, once you have your site generator installed, you probably don&rsquo;t want to go back.</p>
+
+<p>Working on this article, using <a href="http://gohugo.io" target="_blank">Hugo</a>, here is what I do:</p>
+
+<p>1) To create the article, I ran the following command:</p>
+
+<pre><code>hugo new expertice/static-website-generators.md&quot;. This
+</code></pre>
+
+<p>This generated a new file &ldquo;content/expertice/static-website-generators.md&rdquo; containing this:</p>
+
+<pre><code>+++
+date = &quot;2017-05-17T09:49:02+02:00&quot;
+draft = true
+title = &quot;Static website generators&quot;
++++
+</code></pre>
+
+<p>Below this frontmatter, I can start writing the article. It is written in markdown. If you don&rsquo;t know markdown, its about time! Basically it is an unobstructive syntax for writing rich text. That is, you can make bold text, headlines, links, etc without resorting to cumbersome HTML. HTML is allowed, though, when you need more than basic formatting. Markdown is very widespread. Many discussion forums support it, Wordpress supports it and there are tools for converting markdown to PDF.</p>
+
+<p>I opened the file in my favourite text editor, which is gedit. Like many text editors, gedit supports markdown &ndash; headlines becomes green, italic text becomes italic, etc. Working on text in markdown format in a markdown-enabled editor is wonderful.</p>
+
+<p>Here comes the best part: previewing. Hugo is not only able to generate static files, but also to work as a server. It is simply started with the following command in the directory of the site</p>
+
+<pre><code>hugo server
+</code></pre>
+
+<p>With hugo server running, I can view my site in my web browser at a local adress, <code>http://localhost</code>. I browse to <code>http://localhost:1313/expertice/static-website-generators/</code> and see my empty document.</p>
+
+<p>Hugo server automatically detects file changes and rebuilds pages in only 1ms per page. Also, Hugo server inserts some clever javascript that detects the change. The effect is this: Whenever I save my document from the text editor, the webpage in the browser gets reloaded and reflects the changes immidiately. Nice!</p>
+
+<p>When I&rsquo;m satisfied with the article and want to publish it, I run this command:</p>
+
+<pre><code>hugo
+</code></pre>
+
+<p>Hugo then generates the website in a subfolder called &ldquo;public&rdquo;.</p>
+
+<p>I then use ftp to upload it to the CDN and purge the cache in the CDN. These steps can however also be automated.</p>
+
+<p>To work many on the same project, you need a versioning system such as git. Before working, you fetch updates. When finished working, you push your changes back to the repository. Its actually just I few commands you need to learn. Its possible to set up a system so changes in the git repository automatically triggers a hugo build and pushes it to the CDN.</p>
+
+<p>Want to know more about Hugo? - head over to <a href="https://gohugo.io" target="_blank">https://gohugo.io</a>.</p>
+
+<p><a href="/contact">Or, lets have a talk! →</a></p>
+
+<!--
+
+Dynamic websites on a LAMP 
+
+
+Again, compared to dynamic sites, security with static sites is 
+
+It is easy to put a static site on a CDN, and the CDN 
+
+
+- Performance is as great as it comes\
+ - The whole site can be put on a CDN
+- Security is as great as it comes\
+ - No more worrying whether your CMS has security issues not yet discovered (it probably has)
+- No maintenance.\
+ - No CMS updates
+ - No worrying whether the latest CMS update will break the site.
+ - No migration task ahead, when the CMS major version is no longer supported, and it only runs on outdated PHP versions, which have security problems 
+ - No server updates
+ - No database problems
+- It frees your content. By choosing a static site generator which generates the site from markdown files, you can easily:
+ - Manage content. For example its easy to send the content files to translation
+ - Migrate content to another static site generator that supports markdown files (many do)
+ - Use the content for other purposes. For example generate PDFs
+- Static site generators are maturing.
+ - They are feature-rich
+ - They are fast
+ - They have many templates
+ - They are backed by large communities
+ - Its a pleasure to work with
+
+
+your content can easily be moved around and used for other purposes -- most static site generators are capable of generating a website from markdown files, which makes it relatively easy to migrate content between site generators. Markdown files can also be used to generate PDF's and Latex documents
+If you for example use markdown files for your content
+If for example you choose a static site generator which generates sites from markdown files, 
+Text files in a filesystem are more easier to move around than content in a database
+Static is trending. And for good reasons. First of all, performance is great -- the whole site can be put on a CDN. Also, security is as great as it comes. No more worrying whether your CMS has security issues not yet discovered (it probably has). Also, no worrying whether the latest CMS update will break the site. And no migration task ahead, when the CMS major version is no longer supported, and it only runs on outdated PHP versions, which have security problems. No server updates. 
+
+#Also, your content can easily be moved around and used for other purposes -- most static site generators are capable of generating a website from markdown files, which makes it relatively easy to migrate content between site generators. Markdown files can also be used to generate PDF's and Latex documents
+
+#And of course, your static website can still be dynamic. Want users to be able to comment your articles? - use Discuss. Want a webform? - use [Formspree]https://formspree.io). Want something custom? We can implement it with javascript which calls another server.
+
+#Some CDN's even provide meassures against DDOS attacks.
+#Fast websites which can be put on CDN. Great security. No mingling with CMS updates, webserver updates or database issues. And the static site generators are maturing, making it easy and even fun to build static. And its well suited for both for small websites such as blogs and large feature-rich websites. MailChimp is for example a static website.
+-->
+
+</div>
+</article>
+
+      </main>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+

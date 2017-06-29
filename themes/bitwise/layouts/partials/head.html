@@ -1,0 +1,29 @@
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{with .Params.description}}<meta name="description" content="{{ . }}">{{ end -}}
+<meta property="og:title" content="bitwise">
+<meta property="og:image" content="http://picoquery.com/img/logo.png">
+<meta property="og:url" content="http://bitwise-it.dk/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="bitwise">
+<meta name="author" content="{{.Site.Params.Author }}"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+{{- if .IsTranslated }}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
+{{ range .Translations }}<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
+{{- end }}
+{{- end }}
+{{ .Hugo.Generator }}
+<title>{{ .Title }}</title>
+{{- partial "script-compressed.html" . }}
+{{ if eq .Params.prettify true }}
+<script src="/lib/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link rel="stylesheet" href="/lib/highlight/styles/hybrid.css">
+{{ end }}
+{{- partial "style.html" . }}
+{{ partial "extra-in-head.html" . }}
+</head>
+

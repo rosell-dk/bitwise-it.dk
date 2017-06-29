@@ -1,0 +1,22 @@
+
+
+To slash or not to slash
+- A recommendation based on semantic conciderations
+
+
+Try drawing the hierarchy of your site
+(illustration)
+
+It kind of looks weird with the lines on the last boxes, right?
+
+
+@bep, You are right about the semantics, as understood as semantics of URL resolution on most, if not all web servers. I was not thinking about *those* semantics, but rather the semantics of URLs generally, decoupled from technicalities on web servers.
+
+[RFC 1630](https://www.ietf.org/rfc/rfc1630.txt) has the following to say about using slash:
+> If the URN has a hierarchical nature, then the slash delimiter shall be used in the URI encoding; If the URN has a hierarchical nature, the most significant part shall be encoded on the left in the URI encoding; 
+
+The "semantics" of using a slash is thus according to this definition to delimit hierarchical content. Using these semantics stricly, it does not make sense to add a trailing slash.
+
+However, a trailing slash has gotten a special meaning by usage. It has been used for directories. I guess we can call this meaning semantics too, even though it may only exist as a convention, and not in any specification. In this way, it makes semantical sense to use a trailing slash for indexes, such as a listing of all tags at a location "/tags/". But not for individual posts.
+
+Now, semantics is not everything. Some prefer trailing slashes, because they think they look "nicer". Others prefer no trailing slashes because they think *that* looks nicer. I leave it to others to write a recommendation based on aestetics.

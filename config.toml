@@ -1,8 +1,17 @@
 # DefaultContentLanguage = "en"
 baseURL = "http://www.bitwise-it.dk/"
 enableEmoji = false
-theme = "bitwise"
 title = "bitwise"
+#theme = "beautifulhugo"
+theme = "bitwise"
+
+uglyurls = false
+disableSitemap = true
+#disableKinds= ["sitemap"]
+# defaultExtension = ""
+
+[Params]
+  Author = "Bjørn Rosell"
 
 [taxonomies]
   tag = "tags"
@@ -16,20 +25,21 @@ title = "bitwise"
   # https://godoc.org/gopkg.in/rtfb/blackfriday.v2#Extensions 
   # beware to camelCase them...
 
-[Params]
-  Author = "Bjørn Rosell"
 
 #[[menu.main]]
 #    name = "Home"
 #    weight = -110
 #    url = "/"
 
-[languages]
-[languages.en]
-languageCode = "en-us"
-title = "bitwise (en)"
+[Languages]
+[Languages.en]
+weight = 2
+languageCode = "en"
+languageName = "english"
 
-[languages.dk]
-title = "bitwise (dk)"
+[Languages.da]
+weight = 1
+languageCode = "da"
+languageName = "dansk"
 
 

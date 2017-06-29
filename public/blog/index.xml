@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on bitwise</title>
+    <link>http://www.bitwise-it.dk/blog/</link>
+    <description>Recent content in Blogs on bitwise</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 15 Jun 2017 12:02:51 +0200</lastBuildDate>
+    
+	<atom:link href="http://www.bitwise-it.dk/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>instant</title>
+      <link>http://www.bitwise-it.dk/blog/instant/</link>
+      <pubDate>Thu, 15 Jun 2017 12:02:51 +0200</pubDate>
+      
+      <guid>http://www.bitwise-it.dk/blog/instant/</guid>
+      <description>This post will be about my Hugo theme, &amp;ldquo;Instant&amp;rdquo; (it could also be called &amp;ldquo;Turbo&amp;rdquo;).</description>
+    </item>
+    
+    <item>
+      <title>webp on demand</title>
+      <link>http://www.bitwise-it.dk/blog/webp-on-demand/</link>
+      <pubDate>Fri, 02 Jun 2017 13:14:38 +0200</pubDate>
+      
+      <guid>http://www.bitwise-it.dk/blog/webp-on-demand/</guid>
+      <description>webp on demand I here present a solution for generating and serving a webp image when a jpeg or png image is requested. When the webserver receives a request for a jpeg image that it hasn&amp;rsquo;t converted yet, it converts the file and stores it as ie &amp;ldquo;logo.jpg.webp&amp;rdquo;. On next request for the same image, the request is routed directly to the generated image. The location of the generated file is customizable.</description>
+    </item>
+    
+    <item>
+      <title>how moving assets to cdn didnt improve performance</title>
+      <link>http://www.bitwise-it.dk/blog/how-moving-assets-to-cdn-didnt-improve-performance/</link>
+      <pubDate>Thu, 01 Jun 2017 10:58:34 +0200</pubDate>
+      
+      <guid>http://www.bitwise-it.dk/blog/how-moving-assets-to-cdn-didnt-improve-performance/</guid>
+      <description>Sometimes a ressource takes a long time to fetch, even though CloudFront repports a hit
+https://www.webpagetest.org/result/170601_AC_HCY/1/details/#waterfall_view_step1</description>
+    </item>
+    
+    <item>
+      <title>beware of extra dns lookups</title>
+      <link>http://www.bitwise-it.dk/blog/beware-of-extra-dns-lookups/</link>
+      <pubDate>Thu, 01 Jun 2017 10:01:33 +0200</pubDate>
+      
+      <guid>http://www.bitwise-it.dk/blog/beware-of-extra-dns-lookups/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wordpress speed optimization with minimal effort</title>
+      <link>http://www.bitwise-it.dk/blog/wordpress-speed-optimization-with-minimal-effort/</link>
+      <pubDate>Wed, 31 May 2017 09:20:32 +0200</pubDate>
+      
+      <guid>http://www.bitwise-it.dk/blog/wordpress-speed-optimization-with-minimal-effort/</guid>
+      <description>Wordpress speed optimization with minimal effort A case study of improving speed of a simple Wordpress site The website http://www.mingo.net wasn&amp;rsquo;t running very quickly. My task was to make it faster with just a few means.
+Before optimizing Let&amp;rsquo;s see what we got. Using webpagetest.org, here is a waterfall view of requests made, when visiting the frontpage:
+ (click on the image to see the complete report)
+Not good. 3.</description>
+    </item>
+    
+  </channel>
+</rss>

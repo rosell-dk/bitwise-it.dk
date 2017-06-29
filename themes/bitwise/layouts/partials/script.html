@@ -1,0 +1,58 @@
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+/*
+  [].slice.call(document.getElementById("toc").getElementsByTagName("A")).forEach(function(el) {
+    el.addEventListener("click", function() {
+//        location.hash = n
+    });
+  });*/
+  var tocLinks = [].slice.call(document.getElementById("toc").getElementsByTagName("A"));
+  var tocIds = tocLinks.map(function(el) {
+    return el.getAttribute("href").substr(1);
+  });
+  var tocEls = tocIds.map(function(el) {
+    return document.getElementById(el);
+  });
+  var current = 0;
+
+  window.addEventListener("scroll", function(t) {
+    var i = tocEls.length;
+    while (i > 0) {
+      i--;
+      if (tocEls[i].getBoundingClientRect().top < 30) {
+        if (i == current) return
+//        history.replaceState({}, "", "#" + tocIds[i]);
+        tocLinks[current].setAttribute("class", "");
+        tocLinks[i].setAttribute("class", "active");
+        current = i;
+        return;
+      }
+    }
+  });
+/*
+  window.addEventListener("scroll", function(t) {
+    [].slice.call(document.getElementById("toc").getElementsByTagName("A")).forEach(function(el) {    
+      var id = el.getAttribute("href").substr(1);
+      var top = document.getElementById(id).getBoundingClientRect().top;
+      if (top < 30) {
+        history.replaceState({}, "", "#" + id);
+      }
+    });
+  });*/
+
+});
+/*
+from: 
+https://hugodocs.info/content-management/shortcodes/#what-is-a-shortcode
+$("#toc a").on("click", function(e) {
+    e.preventDefault(), e.stopPropagation();
+    var t = $(this).attr("href"),
+        n = t.split("#")[1];
+    $(t).velocity("scroll", {
+        duration: 500,
+        offset: -80,
+        easing: "ease-in-out"
+    }), location.hash = n
+})
+*/
+</script>

@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="{{ .Lang }}">
+{{- partial "custom.html" . }}
+{{ partial "head.html" . }}
+<body{{ if or (eq .Params.toc true) (and (gt .WordCount 400 ) (ne .Params.toc false)) }} class="has-toc"{{ end }}>
+{{ block "main" . }}{{ end }}
+{{ partial "footer.html" . }}
+</body>
+</html>
+

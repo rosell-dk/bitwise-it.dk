@@ -1,0 +1,88 @@
+{{ if eq .Params.id "index"}}
+<style>
+bigbox {
+  display: inline-block;
+  width: 70%;
+  margin: 40px 0 30px 15%;
+  font-size: 22px;
+  border: 2px solid #2f7ea0;
+  padding:20px;
+  line-height: 1.2;
+}
+@media (max-width: 800px) {
+  bigbox {
+    margin: 20px 0 0 0;
+    width: auto;
+    font-size: 20px;
+  }
+}
+</style>
+{{ end }}
+{{ if eq .Params.id "contact"}}
+<!-- template "css/contact.html" -->
+<style>
+  .letstalk {
+    margin: 40px;
+  }
+  .letstalk > div {
+    display: inline-block;
+  }
+  .letstalk > div > div {
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: top;
+  }
+  .letstalk a {
+    font-size:150%;
+  }
+
+  .circle-link {
+    padding: 13px;
+    border-radius: 44px;
+    box-sizing: content-box;
+    background-color: #2f7ea0;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid #4078c0;
+    margin-bottom: 10px;  
+    margin-right: 10px
+  }
+  .circle-link.big svg {
+    width: 44px;
+    height: 44px;  
+  }
+  .circle-link:hover {
+    background-color: white;
+    color: #2f7ea0;
+    border: 2px solid #333;
+  }
+  .circle-link svg {
+    fill: currentcolor;
+    stroke: currentcolor;
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    .circle-link.big svg {
+      width: 30px;
+      height: 30px;  
+    }
+    .letstalk {
+      margin: 8%;
+    }
+    .letstalk a {
+      font-size:120%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .letstalk {
+      margin: 30px 0;
+    }
+  }
+</style>
+{{ end }}
+

@@ -1,0 +1,50 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+    RewriteCond %{HTTP_ACCEPT} image/webp
+#    RewriteRule ^(.*)\.(jpe?g|png)$ $1.$2.webp [T=image/webp,E=accept:1]
+    RewriteRule ^(.*)\.(jpe?g)$ $1.$2.webp [T=image/webp,E=accept:1]
+
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header append Vary Accept env=REDIRECT_accept
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{DOCUMENT_ROOT}/$1.webp !-f
+  RewriteRule ^(.*)\.(webp)$ webp-convert.php?file=$1&save [L]
+</IfModule>
+
+AddType image/webp .webp
+
+
+# Enforce no-trailing-slash policy.
+# That is, if we have a file located at "/contact/index.htm",
+# it will be available at this url: "/contact" (no trailing slash)
+# Also, trailing-slash will redirect to non-trailing slash URL.
+# In our case, this url: "/contact/" will redirect to this: "/contact"
+
+# Disable automatic directory slashing
+DirectorySlash Off
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteBase /
+
+# Redirect trailing-slash URLs to non-trailing-slash URL
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*)/$ $1 [L,R=301]
+
+# Let non-trailing slash URLs return the content of index.html
+# - but only do this when its a directory.
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*)$ %{REQUEST_URI}/index.html [L]
+
+</IfModule>
+
+
+

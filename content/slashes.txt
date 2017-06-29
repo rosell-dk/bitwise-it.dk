@@ -1,0 +1,21 @@
+Sorry for making too bold statements based on assumptions rather than data
+
+1) I surrender, you have much better qualification to judge this than me
+2) Again, I was too quick and I also I recalled wrong with Wordpress. Here is 
+
+The following CMS per standard have no trailing slash:
+- Drupal [[1]](https://www.drupal.org/node/2841555)
+- Joomla [[2]](https://www.elftronix.com/how-to-add-trailing-slash-to-joomla-urls-without-htaccess/)
+
+The following CMS per standard have trailing slash:
+- Wordpress [[1]](https://www.drupal.org/node/2841555)
+
+3) Also here, I was too fast. I shall try to remedy that.
+
+[RFC 1630](https://www.ietf.org/rfc/rfc1630.txt) has the following to say about using slash:
+> If the URN has a hierarchical nature, then the slash delimiter shall be used in the URI encoding; If the URN has a hierarchical nature, the most significant part shall be encoded on the left in the URI encoding; 
+
+The "semantics" of using a slash is thus according to this definition to "delimit hierarchical content". Using these semantics stricly, it does not make sense to add a trailing slash.
+
+However, a trailing slash has gotten a special meaning by having been used to mean a folder. We can call this meaning semantics too, even though it may only exist in peoples minds, and not in any specification. In this way, it makes semantical sense to use a trailing slash for indexes, such as a listing of all tags at a location "/tags/". But not for individual posts.
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bitwise is a tiny IT company based in Copenhagen on bitwise</title>
+    <link>http://www.bitwise-it.dk/da/</link>
+    <description>Recent content in bitwise is a tiny IT company based in Copenhagen on bitwise</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>da</language>
+    <lastBuildDate>Thu, 04 May 2017 21:04:32 +0200</lastBuildDate>
+    
+	<atom:link href="http://www.bitwise-it.dk/da/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kontakt</title>
+      <link>http://www.bitwise-it.dk/da/kontakt/</link>
+      <pubDate>Sun, 07 May 2017 21:04:32 +0200</pubDate>
+      
+      <guid>http://www.bitwise-it.dk/da/kontakt/</guid>
+      <description>Kontakt  [Normal mode of contact] -- write me an email at it@rosell.dk  Email:
+rosell@bitwise-it.dk  
+ [Direct mode of contact] -- Call me on +45 2674 5919  &amp;mdash; Eller ring bare:
++45 26745919    Om &amp;ldquo;os&amp;rdquo; 
+Bjørn Rosell, BSc. Datalogi, ejer, webudvikler Bjørn har udviklet hjemmesider og webapplikationer i snart 20 år. Han er erfaren både i frontend og backend. Når ikke han programmerer, finder du ham nok med sine børn, eller måske i sofaen med en tegneserie.</description>
+    </item>
+    
+  </channel>
+</rss>
